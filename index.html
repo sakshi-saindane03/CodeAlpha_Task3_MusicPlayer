@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-ui">
+        <h1><i class="fa-sharp fa-solid fa-music"></i>Music Player</h1>
+        <div id="main-player">
+            <div id="player-container">
+                <div id="song-image">
+                    <img src="/images/cover1.png" id="song-cover">
+                </div>
+                <div id="song-info">
+                    <h2 id="song-title">Shape of You</h2>
+                    <p id="artist-name">Ed Sheeran</p>
+                    <div id="progress-container">
+                        <span id="current-time" class="time">0:00</span>
+                        <audio id="audio" src="songs/song1.mp3"></audio>
+                        <input type="range" id="progress" value="0" min="0" max="100" step="1">
+                        <span id="duration" class= "time">03:54</span>
+                    </div>
+                    <div id="controls">
+                        <div id="previous-button" class="pn-btn cbtn"><i class="fa-solid fa-backward-step pn-icon"></i></div>
+                        <div id="play-pause-button">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div id="next-button" class="pn-btn cbtn"><i class="fa-solid fa-forward-step pn-icon"></i></div>
+                    </div>
+                    <div id="volume-control">
+                        <span class="volume-low v-btn"><i class="fa-solid fa-volume-low v-icon"></i></span>
+                        <input type="range" id="volume" value="0" min="0" max="100" step="10">
+                        <span class="volume-high v-btn"><i class="fa-solid fa-volume-high v-icon"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div id="playlist">
+                <h2 id="playlist-heading"><i class="fa-solid fa-list"></i>Playlist</h2>
+                <div id="song-list">
+                    <div class="song1 ind-song">
+                        <div class="music-icon"><i class="fa-solid fa-music"></i></div>
+                        <div class="music-info">
+                            <div class="music-title">Shape of You</div>
+                            <div class="music-singer">Ed Sheeran</div>
+                        </div>
+                        <div class="music-duration">3:59</div>
+                    </div>
+                    <div class="song2 ind-song">
+                        <div class="music-icon"><i class="fa-solid fa-music"></i></div>
+                        <div class="music-info">
+                            <div class="music-title">Believer</div>
+                            <div class="music-singer">Imagine Dragons</div>
+                        </div>
+                        <div class="music-duration">2:29</div>
+                    </div>
+                    <div class="song3 ind-song">
+                        <div class="music-icon"><i class="fa-solid fa-music"></i></div>
+                        <div class="music-info">
+                            <div class="music-title">Faded</div>
+                            <div class="music-singer">Alan Walker</div>
+                        </div>
+                        <div class="music-duration">3:05</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="audio-tag"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
