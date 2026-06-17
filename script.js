@@ -31,7 +31,6 @@ const volumeSlider = document.getElementById('volume');
 const currentTime = document.getElementById('current-time');
 const duration = document.getElementById('duration');
 const playlistSongs = document.getElementsByClassName('ind-song');
-const ppBtn = document.getElementsByClassName('ppbtn')
 
 let isPlaying = false;
 
@@ -127,6 +126,9 @@ prevBtn.addEventListener('click', function() {
         songImg.src = songs[currentIndex].image;
         audio.play();
         playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+
+        Array.from(playlistSongs).forEach(s => s.classList.remove('active'));
+        playlistSongs[currentIndex].classList.add('active');
     }
 });
 
@@ -139,6 +141,9 @@ function playNext(){
         songImg.src = songs[currentIndex].image;
         audio.play();
         playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        // playlistSongs[currentIndex].style.background = "rgba(60, 9, 108, 0.1)";
+        Array.from(playlistSongs).forEach(s => s.classList.remove('active'));
+        playlistSongs[currentIndex].classList.add('active');
     }
 }
 
@@ -153,4 +158,13 @@ volumeSlider.addEventListener('input', function(){
         grey ${volumeSlider.value}%,
         grey 100%
     )`;
+});
+
+audio.volume = 1;
+volumeSlider.value = 100;
+
+audio.addEventListener('loadedmetadata', function() {
+    let min = Math.floor(audio.duration / 60);
+    let sec = Math.floor(audio.duration % 60);
+    duration.innerHTML = sec < 10 ? `${min}:0${sec}` : `${min}:${sec}`;
 });

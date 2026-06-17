@@ -20,7 +20,8 @@
 
 
 #main-ui {
-    min-height: 31rem;
+    /* width: 100%; */
+    min-height: 34.9rem;
     padding: 1rem 1rem 1.5rem 1rem;
     background-color: rgba(123, 44, 191, 0.5);
 }
@@ -42,14 +43,15 @@ h1 i {
 }
 
 #main-player {
-    min-height: 13rem;
-    width: 67rem;
+    min-height: 30rem;
+    max-width: 72rem;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     border-radius: 10px;
     border: 0.75px solid rgba(128, 128, 128, 0.5);
     justify-content: center;
-    align-items: stretch;
+    /* align-items: stretch; */
     overflow: hidden;
 }
 
@@ -60,6 +62,7 @@ h1 i {
     justify-content: center;
     gap: 0.5rem;
     background-color: #f8d7f8;
+    width: 100%;
 }
 
 #song-image {
@@ -74,6 +77,10 @@ h1 i {
     margin: 0 auto;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#song-info {
+    width: 20.5rem;
 }
 
 #song-info h2 {
@@ -95,11 +102,12 @@ h1 i {
 
 #progress-container {
     padding: 0.5px 0;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     width: 100%;
+    justify-content: center;
 }
 
 .time, 
@@ -110,10 +118,11 @@ h1 i {
 
 #progress {
     appearance: none;
-    width: 17rem;
+    max-width: 17rem;
     flex: 1;
     border-radius: 5px;
-    background-color: #696969;;
+    background-color: #696969;
+    justify-self: center;
 }
 
 #progress::-webkit-slider-runnable-track {
@@ -172,23 +181,25 @@ h1 i {
     align-items: center;
     justify-content: center;
     margin: 1rem 0;
+    width: 20rem;
+    width: 100%;
 }
 
 #volume {
     appearance: none;
-    flex: 0.75;
+    flex: 0.6;
     border-radius: 5px;
     background-color: #696969;
 }
 
 #volume::-webkit-slider-runnable-track {
-    height: 0.2rem;
+    height: 0.25rem;
 }
 
 #volume::-webkit-slider-thumb {
     appearance: none;
-    height: 10px;
-    width: 10px;
+    height: 0.65rem;
+    width: 0.65rem;
     background-color:rgb(106, 77, 200);
     border-radius: 50%;
     margin-top: -3px;
@@ -270,4 +281,59 @@ h1 i {
 
 .music-singer {
     font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    #main-player {
+        flex-direction: column;
+        width: 95%;
+        min-height: auto;
+    }
+
+    #playlist {
+        border-left: none;
+        border-top: 1px solid rgba(0,0,0,0.15);
+    }
+
+    #progress {
+        width: 100%;
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
+    }
+
+    #song-image img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    #song-info {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    #progress-container {
+        width: 100%;
+    }
+
+    #controls {
+        gap: 1rem;
+    }
+
+    #playlist-heading {
+        padding: 1rem;
+    }
+
+    #song-list {
+        padding: 1rem 0.5rem;
+    }
+
+    #player-container {
+        width: 100%;
+    }
 }
