@@ -3,19 +3,19 @@ const songs = [
         title: "Shape of You",
         artist: "Ed Sheeran",
         src: "songs/song1.mp3",
-        image: "images/cover1.png"
+        image: "https://c.saavncdn.com/879/Shape-of-You-Remix--English-2017-20211105074006-500x500.jpg"
     },
     {
         title: "Believer",
         artist: "Imagine Dragons",
         src: "songs/song2.mp3",
-        image: "images/cover2.png"
+        image: "https://c.saavncdn.com/616/Faded-English-2015-500x500.jpg"
     }, 
     {
         title: "Faded",
         artist: "Alan Walker",
         src: "songs/song3.mp3",
-        image: "images/cover3.png"
+        image: "https://c.saavncdn.com/261/Believer-Kaskade-Remix--English-2017-500x500.jpg"
     }
 ];
 
